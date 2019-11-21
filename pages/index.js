@@ -1,5 +1,19 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import Page from '../src/components/page';
+
+const APP_STORE_URL = 'https://apps.apple.com/us/app/olddead/id1488060890';
+
+const handleClick = (event, url) => {
+  event.preventDefault();
+
+  ReactGA.event({
+    category: 'CTA',
+    action: 'Clicked Apple App Store Button',
+  });
+
+  window.open(url, '_blank');
+}
 
 const Home = () => (
   <Page title="OldDead" homepage>
@@ -12,9 +26,9 @@ const Home = () => (
       It's simple, fun, and morbid.
     </p>
     <a
-      href="https://apps.apple.com/us/app/olddead/id1488060890"
-      target="_blank"
+      href={APP_STORE_URL}
       className="homepage__app-store-link"
+      onClick={(e) => handleClick(e, APP_STORE_URL)}
     >
       <img
         src="/images/app-store-01.svg"
