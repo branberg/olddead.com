@@ -1,7 +1,12 @@
 .footer {
-  padding: 4rem;
+  padding: 1rem 0;
 }
 
 .footer__link {
   margin-right: 2rem;
+
+  @media screen and (max-width: 750px) {
+    display: block;
+    margin-top: 1rem;
+  }
 }

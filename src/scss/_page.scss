@@ -1,20 +1,64 @@
 .page {
   position: fixed;
   top: 0;
-  right: 0;
-  bottom: 0;
-  left:0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &.page--homepage {
+    display: flex;
+
+    @media screen and (max-width: 750px) {
+      display: block;
+      position: relative;
+      height: auto;
+    }
+  }
+}
+
+.page__content {
+  margin: 0 auto;
+  padding: 4rem;
+  max-width: 68rem;
+
+  .page--homepage & {
+    max-width: 50rem;
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 750px) {
+      max-width: 68rem;
+      flex: none;
+    }
+  }
 }
 
 .page__body {
-  flex: 1;
-  position: relative;
+  .page--homepage & {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .page__footer {
   flex: 0;
+}
+
+.page__pattern {
+  flex: 0 1 50%;
+  background-image: url('/images/background02.png');
+  background-repeat: repeat;
+  background-size: 819px 963px;
+  background-position: left center;
+
+  @media screen and (max-width: 1000px) {
+    flex-basis: 33%;
+  }
+
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
 }
