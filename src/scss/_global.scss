@@ -6,16 +6,20 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: $yellow;
+  color: $black;
   overflow: hidden;
 }
 
 html {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $montserrat;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
 }
 
 a {
-  // color: #F8E61C;
-  color: #9d9d9d;
+  color: $black;
 }
